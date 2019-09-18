@@ -31,6 +31,7 @@
 (setq async-shell-command-buffer 'new-buffer)
 (setq save-interprogram-paste-before-kill t)
 (setq initial-buffer-choice (expand-file-name "~"))
+(setq visible-bell 1)
 
 ;; Make Aliases Available in Subshell ;;
 (setq shell-file-name "bash")
