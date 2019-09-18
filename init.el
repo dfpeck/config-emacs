@@ -81,7 +81,7 @@
 (defalias 'str= 'string=)
 (defalias 'yes-or-no-p 'y-or-n-p) ; force y/n
 (defalias 'async-shell-command 'dfp/async-shell-command) ; allow specifying output-buffer interactively
-(defalias 'quit-window 'delete-frame)
+;; (defalias 'quit-window 'delete-frame) ; TODO only use for i3
 
 ;; Mode Settings ;;
 (tool-bar-mode -1)
@@ -89,7 +89,7 @@
 (column-number-mode 1)
 (scroll-bar-mode -1)
 (setq-default indent-tabs-mode nil)
-(setf pop-up-frames t)
+;; (setf pop-up-frames t) ; TODO only use for i3
 
 ;; Final ;;
 (load "my-appearance.el")
