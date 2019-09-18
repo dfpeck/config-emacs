@@ -30,7 +30,7 @@
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
 (setq async-shell-command-buffer 'new-buffer)
 (setq save-interprogram-paste-before-kill t)
-(setq initial-buffer-choice "/home/dakota")
+(setq initial-buffer-choice (expand-file-name "~"))
 
 ;; Make Aliases Available in Subshell ;;
 (setq shell-file-name "bash")
