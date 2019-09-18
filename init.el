@@ -82,7 +82,6 @@
 (defalias 'str= 'string=)
 (defalias 'yes-or-no-p 'y-or-n-p) ; force y/n
 (defalias 'async-shell-command 'dfp/async-shell-command) ; allow specifying output-buffer interactively
-;; (defalias 'quit-window 'delete-frame) ; TODO only use for i3
 
 ;; Mode Settings ;;
 (tool-bar-mode -1)
@@ -90,7 +89,13 @@
 (column-number-mode 1)
 (scroll-bar-mode -1)
 (setq-default indent-tabs-mode nil)
-;; (setf pop-up-frames t) ; TODO only use for i3
+(shell-command-to-string "echo $DESKTOP_SESSION")
+
+;; Additional Settings for Tiling WMs ;;
+(when (string-match-p (regexp-quote "i3")
+                      (shell-command-to-string "echo $DESKTOP_SESSION"))
+  (defalias 'quit-window 'delete-frame) ;
+  (setf pop-up-frames t))
 
 ;; Final ;;
 (load "my-appearance.el")
