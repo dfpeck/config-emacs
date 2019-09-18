@@ -6,10 +6,11 @@
  '(custom-safe-themes
    (quote
     ("d9046dcd38624dbe0eb84605e77d165e24fdfca3a40c3b13f504728bab0bf99d" default)))
+ '(delete-selection-mode nil)
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (use-package company tide csharp-mode exec-path-from-shell bash-completion slime rust-mode)))
+    (irony use-package company tide csharp-mode exec-path-from-shell bash-completion slime rust-mode)))
  '(safe-local-variable-values
    (quote
     ((org-html-postamble)
