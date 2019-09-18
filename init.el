@@ -10,7 +10,7 @@
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (irony use-package company tide csharp-mode exec-path-from-shell bash-completion slime rust-mode)))
+    (company-irony-c-headers company-irony irony use-package company tide csharp-mode exec-path-from-shell bash-completion slime rust-mode)))
  '(safe-local-variable-values
    (quote
     ((org-html-postamble)
