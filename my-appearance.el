@@ -12,6 +12,9 @@
 ;; (load-theme 'monokai t)
 (load-file "~/.emacs.d/themes/monokai-theme.el")
 
+;; Cursor Color ;;
+(setq default-frame-alist '((cursor-color . "white")))
+
 ;; Transparency ;;
 (dfp/cycle-transparency)
 
