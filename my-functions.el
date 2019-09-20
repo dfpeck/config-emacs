@@ -1,7 +1,11 @@
 ;; List Processing ;;
 (defun dfp/lr-list (l)
-  "Left-rotate a list and return the result"
+  "Left-rotate a list non-destructively"
   (append (cdr l) (list (car l))))
+
+(defmacro dfp/lr-list! (l)
+  "Left rotate a list in place"
+  `(setq ,l (dfp/lr-list ,l)))
 
 ;; (defun dfp/rr-list (l)
 ;;   "Right-rotate a list and return the result"
