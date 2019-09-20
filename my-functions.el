@@ -33,7 +33,7 @@
 (defun dfp/cycle-transparency ()
   (interactive)
   (dfp/set-transparency (car dfp/transparencies))
-  (setq dfp/transparencies (dfp/lr-list dfp/transparencies)))
+  (dfp/lr-list! dfp/transparencies))
 
 
 ;; Async Shell Command Execution in Named Buffer ;;
