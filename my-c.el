@@ -10,8 +10,14 @@
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
 ;; Company Irony ;;
+(add-hook 'c++-mode-hook 'company-mode)
+(add-hook 'c-mode-hook 'company-mode)
 (with-eval-after-load "company"
   (add-to-list 'company-backends 'company-irony))
+
+;; Hide/Show Mode ;;
+(add-hook 'c++-mode-hook 'hs-minor-mode)
+(add-hook 'c-mode-hook 'hs-minor-mode)
 
 ;; Formatting ;;
 (setq-default c-block-comment-prefix "* ")
