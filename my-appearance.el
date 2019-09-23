@@ -23,3 +23,6 @@
 (setq-default tab-width 4)
 (set-fontset-font "fontset-default" 'kana "TakaoExGothic")
 (dfp/fonts-cjk-japanese)
+
+;; Comment Sytle ;;
+;; (setq comment-style 'multi-line)
