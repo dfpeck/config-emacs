@@ -32,7 +32,6 @@
 (setq async-shell-command-buffer 'new-buffer)
 (setq save-interprogram-paste-before-kill t)
 (setq initial-buffer-choice (expand-file-name "~"))
-(setq visible-bell 1)
 
 ;; Make Aliases Available in Subshell ;;
 (setq shell-file-name "bash")
@@ -82,6 +81,7 @@
 (defalias 'str= 'string=)
 (defalias 'yes-or-no-p 'y-or-n-p) ; force y/n
 (defalias 'async-shell-command 'dfp/async-shell-command) ; allow specifying output-buffer interactively
+(setq ring-bell-function 'ignore)
 
 ;; Mode Settings ;;
 (tool-bar-mode -1)
