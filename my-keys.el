@@ -6,12 +6,12 @@
 (define-key my-keys-minor-mode-map (kbd "C-w") 'previous-line)             ; previously kill-region (>C-p)
 (define-key my-keys-minor-mode-map (kbd "C-s") 'next-line)                 ; previously isearch-forward (>C-f)
 (define-key my-keys-minor-mode-map (kbd "C-q") 'move-beginning-of-line)    ; previously quoted-insert (>?)
-;;(define-key my-keys-minor-mode-map (kbd "C-e") 'move-end-of-line)        ; default
+(define-key my-keys-minor-mode-map (kbd "C-e") 'move-end-of-line)          ; default
 
 (define-key my-keys-minor-mode-map (kbd "M-a") 'backward-word)             ; previously backward-sentence (>M-q)
 (define-key my-keys-minor-mode-map (kbd "M-d") 'forward-word)              ; previously kill-word (>M-n)
 (define-key my-keys-minor-mode-map (kbd "M-q") 'backward-sentence)         ; previously fill-paragraph (>M-b)
-;;(define-key my-keys-minor-mode-map (kbd "M-e") 'forward-sentence)        ; default
+(define-key my-keys-minor-mode-map (kbd "M-e") 'forward-sentence)          ; default
 
 (define-key my-keys-minor-mode-map (kbd "M-w") 'dfp/scroll-up)              ; previously kill-ring-save (>M-p)
 (define-key my-keys-minor-mode-map (kbd "M-s") 'dfp/scroll-down)            ; previous prefix for various search functions
