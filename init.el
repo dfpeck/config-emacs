@@ -92,9 +92,11 @@
 (shell-command-to-string "echo $DESKTOP_SESSION")
 
 ;; Additional Settings for Tiling WMs ;;
-(when (string-match-p (regexp-quote "i3")
-                      (shell-command-to-string "echo $DESKTOP_SESSION"))
-  (defalias 'quit-window 'delete-frame) ;
+(when (and (not (string-match-p (regexp-quote "mingw") ; if we are not on Windows
+                                (emacs-version)))
+           (string-match-p (regexp-quote "i3")         ; and if we are on i3
+                           (shell-command-to-string "echo $DESKTOP_SESSION")))
+  (defalias 'quit-window 'delete-frame)                ; tiling WM-friendly settings
   (setf pop-up-frames t))
 
 ;; Final ;;
