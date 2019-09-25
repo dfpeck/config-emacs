@@ -89,7 +89,6 @@
 (column-number-mode 1)
 (scroll-bar-mode -1)
 (setq-default indent-tabs-mode nil)
-(shell-command-to-string "echo $DESKTOP_SESSION")
 
 ;; Additional Settings for Tiling WMs ;;
 (when (and (not (string-match-p (regexp-quote "mingw") ; if we are not on Windows
