@@ -22,7 +22,15 @@
 (setq-default fill-column 80)
 (setq-default tab-width 4)
 (set-fontset-font "fontset-default" 'kana "TakaoExGothic")
+(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10.5"))
 (dfp/fonts-cjk-japanese)
+
+;; Scroll Bars ;;
+(defun dfp/disable-scroll-bars (frame)
+  (modify-frame-parameters frame
+                           '((vertical-scroll-bars . nil)
+                             (horizontal-scroll-bars . nil))))
+(add-hook 'after-make-frame-functions 'dfp/disable-scroll-bars)
 
 ;; Comment Sytle ;;
 ;; (setq comment-style 'multi-line)

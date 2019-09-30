@@ -105,5 +105,3 @@
 
 ;; Final ;;
 (load "my-appearance.el")
-(server-start)
-(dired (expand-file-name "~"))
