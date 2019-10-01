@@ -34,8 +34,10 @@
 (setq initial-buffer-choice (expand-file-name "~"))
 
 ;; Make Aliases Available in Subshell ;;
-(setq shell-file-name "bash")
-(setq shell-command-switch "-ic")
+(unless (string-match-p (regexp-quote "mingw")
+                        (emacs-version))
+  (setq shell-file-name "bash")
+  (setq shell-command-switch "-ic"))
 
 ;; Load ;;
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/external"))
@@ -61,6 +63,9 @@
 (load "my-slime.el")
 (load "my-tide.el")
 (load "my-minor-modes.el")
+(if (string-match-p (regexp-quote "mingw")
+                    (emacs-version))
+    (load "my-windows.el")) ; load Windows settings if needbe
 
 ;; Packages and Repositories ;;
 (add-to-list 'package-archives
