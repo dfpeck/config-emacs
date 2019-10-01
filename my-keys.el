@@ -43,6 +43,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-c m a") 'auto-fill-mode)        ; previously NIL
 (define-key my-keys-minor-mode-map (kbd "C-c m m") 'menu-bar-mode)         ; previously undo
 (define-key my-keys-minor-mode-map (kbd "C-c m s") 'subword-mode)          ; previously NIL
+(define-key my-keys-minor-mode-map (kbd "C-c m p") 'show-paren-mode)       ; previously NIL
 
 ;; Miscellaneous ;;
                                         ; (define-key my-keys-minor-mode-map (kbd "C-c q") (lambda () (interactive) (insert "?")))
