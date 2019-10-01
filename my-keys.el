@@ -13,8 +13,8 @@
 (define-key my-keys-minor-mode-map (kbd "M-q") 'backward-sentence)         ; previously fill-paragraph (>M-b)
 (define-key my-keys-minor-mode-map (kbd "M-e") 'forward-sentence)          ; default
 
-(define-key my-keys-minor-mode-map (kbd "M-w") 'dfp/scroll-up)              ; previously kill-ring-save (>M-p)
-(define-key my-keys-minor-mode-map (kbd "M-s") 'dfp/scroll-down)            ; previous prefix for various search functions
+(define-key my-keys-minor-mode-map (kbd "M-w") 'dfp/scroll-up)             ; previously kill-ring-save (>M-p)
+(define-key my-keys-minor-mode-map (kbd "M-s") 'dfp/scroll-down)           ; previous prefix for various search functions
 
 ;; Text Manipulation ;;
 (define-key my-keys-minor-mode-map (kbd "C-n") 'delete-char)               ; previously next-line (>C-s)
