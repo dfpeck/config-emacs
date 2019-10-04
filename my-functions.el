@@ -24,7 +24,6 @@
 
 ;; Frame Transparency ;;
 (defvar dfp/transparencies (list 90 45))
-(setf dfp/transparencies (list 85 45))
 
 (defun dfp/set-transparency (new-alpha)
   (set-frame-parameter (selected-frame) 'alpha `(,new-alpha ,new-alpha))
