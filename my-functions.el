@@ -29,20 +29,29 @@
 ;; Frame Transparency ;;
 (defvar dfp/transparencies (list 90 45))
 
-(defun dfp/set-transparency (new-alpha)
+(defun dfp/set-transparency (new-alpha &optional frame)
+  "Change the transparency of a frame
+
+Set the transparency of a frame to NEW-ALPHA. Optional parameter
+FRAME defaults to the result of `current-frame'.
+
+If used interactively, this function may only be used to set the
+transparency of the current frame."
   (interactive
    (list (if current-prefix-arg
              current-prefix-arg
-           (read-number "Value: "))))
+           (read-number "Value: "))
+         nil))
+  (setq frame (if frame frame (selected-frame))) ; frame defaults to selected frame
   (set-frame-parameter (selected-frame) 'alpha `(,new-alpha ,new-alpha)))
 
 (defun dfp/set-default-transparency (new-alpha)
   (delete! (assoc 'alpha default-frame-alist) default-frame-alist)
   (add-to-list 'default-frame-alist `(alpha ,new-alpha ,new-alpha)))
 
-(defun dfp/cycle-transparency ()
+(defun dfp/cycle-transparency (&optional (frame nil))
   (interactive)
-  (dfp/set-transparency (car dfp/transparencies))
+  (dfp/set-transparency (car dfp/transparencies) frame)
   (dfp/lr-list! dfp/transparencies))
 
 
