@@ -7,6 +7,10 @@
   "Left rotate a list in place"
   `(setq ,l (dfp/lr-list ,l)))
 
+(defmacro delete! (element list)
+  "Delete an element from a list destructively"
+  `(setq ,list (delete ,element ,list)))
+
 ;; (defun dfp/rr-list (l)
 ;;   "Right-rotate a list and return the result"
 ;;   (append (last l) (!!)))
