@@ -63,9 +63,6 @@
 (load "my-slime.el")
 (load "my-tide.el")
 (load "my-minor-modes.el")
-(if (string-match-p (regexp-quote "mingw")
-                    (emacs-version))
-    (load "my-windows.el")) ; load Windows settings if needbe
 
 ;; Packages and Repositories ;;
 (add-to-list 'package-archives
