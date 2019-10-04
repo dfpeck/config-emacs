@@ -16,7 +16,7 @@
 (setq default-frame-alist '((cursor-color . "white")))
 
 ;; Transparency ;;
-(dfp/cycle-transparency)
+(dfp/set-default-transparency (car dfp/transparencies))
 
 ;; Text-Appearance ;;
 (setq-default fill-column 80)
