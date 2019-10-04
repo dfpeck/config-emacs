@@ -32,8 +32,8 @@
 (defun dfp/set-transparency (new-alpha &optional frame)
   "Change the transparency of a frame
 
-Set the transparency of a frame to NEW-ALPHA. Optional parameter
-FRAME defaults to the result of `current-frame'.
+The transparency of FRAME will be set to NEW-ALPHA. Optional
+parameter FRAME defaults to the result of `current-frame'.
 
 If used interactively, this function may only be used to set the
 transparency of the current frame."
@@ -45,6 +45,10 @@ transparency of the current frame."
   (set-frame-parameter frame 'alpha `(,new-alpha ,new-alpha)))
 
 (defun dfp/set-default-transparency (new-alpha)
+  "Set the default frame transparency
+
+NEW-ALPHA will be the transparency of all future frames. Existing
+frames are not affected."
   (delete! (assoc 'alpha default-frame-alist) default-frame-alist)
   (add-to-list 'default-frame-alist `(alpha ,new-alpha ,new-alpha)))
 
