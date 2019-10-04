@@ -43,7 +43,7 @@ transparency of the current frame."
            (read-number "Value: "))
          nil))
   (setq frame (if frame frame (selected-frame))) ; frame defaults to selected frame
-  (set-frame-parameter (selected-frame) 'alpha `(,new-alpha ,new-alpha)))
+  (set-frame-parameter frame 'alpha `(,new-alpha ,new-alpha)))
 
 (defun dfp/set-default-transparency (new-alpha)
   (delete! (assoc 'alpha default-frame-alist) default-frame-alist)
