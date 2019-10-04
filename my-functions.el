@@ -49,8 +49,8 @@ transparency of the current frame."
   (delete! (assoc 'alpha default-frame-alist) default-frame-alist)
   (add-to-list 'default-frame-alist `(alpha ,new-alpha ,new-alpha)))
 
-(defun dfp/cycle-transparency (&optional (frame nil))
-  (interactive)
+(defun dfp/cycle-transparency (&optional frame)
+  (interactive (list nil))
   (dfp/set-transparency (car dfp/transparencies) frame)
   (dfp/lr-list! dfp/transparencies))
 
