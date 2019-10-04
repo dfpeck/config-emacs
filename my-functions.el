@@ -40,8 +40,7 @@ transparency of the current frame."
   (interactive
    (list (if current-prefix-arg
              current-prefix-arg
-           (read-number "Value: "))
-         nil))
+           (read-number "Value: "))))
   (setq frame (if frame frame (selected-frame))) ; frame defaults to selected frame
   (set-frame-parameter frame 'alpha `(,new-alpha ,new-alpha)))
 
@@ -50,7 +49,7 @@ transparency of the current frame."
   (add-to-list 'default-frame-alist `(alpha ,new-alpha ,new-alpha)))
 
 (defun dfp/cycle-transparency (&optional frame)
-  (interactive (list nil))
+  (interactive)
   (dfp/set-transparency (car dfp/transparencies) frame)
   (dfp/lr-list! dfp/transparencies))
 
