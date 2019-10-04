@@ -30,7 +30,14 @@
 (defvar dfp/transparencies (list 90 45))
 
 (defun dfp/set-transparency (new-alpha)
-  (set-frame-parameter (selected-frame) 'alpha `(,new-alpha ,new-alpha))
+  (interactive
+   (list (if current-prefix-arg
+             current-prefix-arg
+           (read-number "Value: "))))
+  (set-frame-parameter (selected-frame) 'alpha `(,new-alpha ,new-alpha)))
+
+(defun dfp/set-default-transparency (new-alpha)
+  (delete! (assoc 'alpha default-frame-alist) default-frame-alist)
   (add-to-list 'default-frame-alist `(alpha ,new-alpha ,new-alpha)))
 
 (defun dfp/cycle-transparency ()
