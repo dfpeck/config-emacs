@@ -13,7 +13,8 @@
     (company-irony-c-headers company-irony irony use-package company tide csharp-mode exec-path-from-shell bash-completion slime rust-mode)))
  '(safe-local-variable-values
    (quote
-    ((org-html-postamble)
+    ((c-file-style quote linux)
+     (org-html-postamble)
      (org-html-postamble . "<p class=\"author\">&hearts; ~%a~ &hearts;</p>")
      (org-html-postamble . "<p class=\"author\">~ %a ~</p>")
      (org-html-postamble . "<p class=\"author\">Author: %a (%e)</p>")
