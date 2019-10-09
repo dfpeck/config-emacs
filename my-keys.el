@@ -46,7 +46,6 @@
 (define-key my-keys-minor-mode-map (kbd "C-c m p") 'show-paren-mode)       ; previously NIL
 
 ;; Miscellaneous ;;
-                                        ; (define-key my-keys-minor-mode-map (kbd "C-c q") (lambda () (interactive) (insert "?")))
 (define-key my-keys-minor-mode-map (kbd "C-c q") 'quoted-insert)
 (define-key my-keys-minor-mode-map (kbd "C-x t") 'dfp/cycle-transparency)  ; previously NIL
 
