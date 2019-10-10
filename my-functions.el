@@ -27,9 +27,9 @@
 
 
 ;; Frame Transparency ;;
-(defvar dfp/transparencies (list 90 45))
+(defvar dfp/base-frame-alphas (list 90 45))
 
-(defun dfp/set-transparency (new-alpha &optional frame)
+(defun dfp/set-frame-alpha (new-alpha &optional frame)
   "Change the transparency of a frame
 
 The transparency of FRAME will be set to NEW-ALPHA. Optional
@@ -44,7 +44,7 @@ transparency of the current frame."
   (setq frame (if frame frame (selected-frame))) ; frame defaults to selected frame
   (set-frame-parameter frame 'alpha `(,new-alpha ,new-alpha)))
 
-(defun dfp/set-default-transparency (new-alpha)
+(defun dfp/set-default-frame-alpha (new-alpha)
   "Set the default frame transparency
 
 NEW-ALPHA will be the transparency of all future frames. Existing
@@ -52,10 +52,10 @@ frames are not affected."
   (delete! (assoc 'alpha default-frame-alist) default-frame-alist)
   (add-to-list 'default-frame-alist `(alpha ,new-alpha ,new-alpha)))
 
-(defun dfp/cycle-transparency (&optional frame)
+(defun dfp/cycle-frame-alpha (&optional frame)
   (interactive)
-  (dfp/set-transparency (car dfp/transparencies) frame)
-  (dfp/lr-list! dfp/transparencies))
+  (dfp/set-frame-alpha (car dfp/frame-alphas) frame)
+  (dfp/lr-list! dfp/frame-alphas))
 
 
 ;; Async Shell Command Execution in Named Buffer ;;

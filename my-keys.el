@@ -47,7 +47,7 @@
 
 ;; Miscellaneous ;;
 (define-key my-keys-minor-mode-map (kbd "C-c q") 'quoted-insert)
-(define-key my-keys-minor-mode-map (kbd "C-x t") 'dfp/cycle-transparency)  ; previously NIL
+(define-key my-keys-minor-mode-map (kbd "C-x t") 'dfp/cycle-frame-alpha)   ; previously NIL
 
 
 ;; Mode Setup ;;
