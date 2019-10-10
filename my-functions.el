@@ -54,8 +54,8 @@ frames are not affected."
 
 (defun dfp/cycle-frame-alpha (&optional frame)
   (interactive)
-  (dfp/set-frame-alpha (car dfp/frame-alphas) frame)
-  (dfp/lr-list! dfp/frame-alphas))
+  (dfp/set-frame-alpha (car dfp/base-frame-alphas) frame)
+  (dfp/lr-list! dfp/base-frame-alphas))
 
 
 ;; Async Shell Command Execution in Named Buffer ;;
