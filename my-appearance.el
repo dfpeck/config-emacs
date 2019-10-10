@@ -22,7 +22,12 @@
 (setq-default fill-column 80)
 (setq-default tab-width 4)
 (set-fontset-font "fontset-default" 'kana "TakaoExGothic")
-(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10.5"))
+(let ((font-size
+       ;; Use font size 9 on Windows
+       (if (string-match-p (regexp-quote "mingw") (emacs-version)) "9"
+         ;; Use font size 10 elsewhere
+         "10.5")))
+  (add-to-list 'default-frame-alist `(font . ,(concat "DejaVu Sans Mono-" font-size))))
 (dfp/fonts-cjk-japanese)
 
 ;; Scroll Bars ;;
