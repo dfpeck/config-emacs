@@ -39,6 +39,12 @@
 ;; Links ;;
 (define-key my-keys-minor-mode-map (kbd "C-c l") 'org-store-link)          ; previously NIL
 
+;; Transparency ;;
+(define-key my-keys-minor-mode-map (kbd "C-x t")                           ; previously NIL
+  'dfp/set-frame-alpha-from-quick-alpha)
+(define-key my-keys-minor-mode-map (kbd "C-x T")                           ; previously NIL
+  'dfp/set-default-frame-alpha-from-quick-alpha)
+
 ;; Modes ;;
 (define-key my-keys-minor-mode-map (kbd "C-c m a") 'auto-fill-mode)        ; previously NIL
 (define-key my-keys-minor-mode-map (kbd "C-c m m") 'menu-bar-mode)         ; previously undo
@@ -47,7 +53,6 @@
 
 ;; Miscellaneous ;;
 (define-key my-keys-minor-mode-map (kbd "C-c q") 'quoted-insert)
-(define-key my-keys-minor-mode-map (kbd "C-x t") 'dfp/cycle-frame-alpha)   ; previously NIL
 
 
 ;; Mode Setup ;;
