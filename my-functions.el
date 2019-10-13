@@ -57,6 +57,23 @@ frames are not affected."
   (dfp/set-frame-alpha (car dfp/base-frame-alphas) frame)
   (dfp/lr-list! dfp/base-frame-alphas))
 
+(defun dfp/get-quick-alpha ()
+  (string-to-number
+   (single-key-description
+    (read-key
+     (apply 'concat
+            "Select an alpha value: "
+            (cl-loop for alpha-choice in dfp/base-frame-alphas
+                     for i from 1 to (length dfp/base-frame-alphas)
+                     collecting (format "[%d: %d%%]  " i alpha-choice)))))))
+
+(defun dfp/set-frame-quick-alpha (alpha-choice &optional frame)
+  (interactive
+   (list
+    (or current-prefix-arg (dfp/get-quick-alpha))
+    nil))
+  (dfp/set-frame-alpha (nth (1- alpha-choice) dfp/base-frame-alphas) frame))
+
 
 ;; Async Shell Command Execution in Named Buffer ;;
 (defun dfp/async-shell-command (command &optional output-buffer error-buffer)
