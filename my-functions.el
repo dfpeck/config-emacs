@@ -52,11 +52,6 @@ frames are not affected."
   (delete! (assoc 'alpha default-frame-alist) default-frame-alist)
   (add-to-list 'default-frame-alist `(alpha ,new-alpha ,new-alpha)))
 
-(defun dfp/cycle-frame-alpha (&optional frame)
-  (interactive)
-  (dfp/set-frame-alpha (car dfp/base-frame-alphas) frame)
-  (dfp/lr-list! dfp/base-frame-alphas))
-
 (defun dfp/get-quick-alpha ()
   (string-to-number
    (single-key-description
