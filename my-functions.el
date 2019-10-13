@@ -27,12 +27,12 @@
 
 
 ;; Frame Transparency ;;
-(defvar dfp/base-frame-alphas (list 90 45))
+(defvar dfp/quick-alphas (list 90 75 45))
 
-(defun dfp/set-frame-alpha (new-alpha &optional frame)
+(defun dfp/set-frame-alpha (alpha &optional frame)
   "Change the transparency of a frame
 
-The transparency of FRAME will be set to NEW-ALPHA. Optional
+The transparency of FRAME will be set to ALPHA. Optional
 parameter FRAME defaults to the result of `current-frame'.
 
 If used interactively, this function may only be used to set the
@@ -42,7 +42,7 @@ transparency of the current frame."
              current-prefix-arg
            (read-number "Value: "))))
   (setq frame (if frame frame (selected-frame))) ; frame defaults to selected frame
-  (set-frame-parameter frame 'alpha `(,new-alpha ,new-alpha)))
+  (set-frame-parameter frame 'alpha `(,alpha ,alpha)))
 
 (defun dfp/set-default-frame-alpha (new-alpha)
   "Set the default frame transparency
@@ -67,7 +67,7 @@ frames are not affected."
                      for i from 1 to (length dfp/base-frame-alphas)
                      collecting (format "[%d: %d%%]  " i alpha-choice)))))))
 
-(defun dfp/set-frame-quick-alpha (alpha-choice &optional frame)
+(defun dfp/set-frame-alpha-from-quick-alpha (alpha-choice &optional frame)
   (interactive
    (list
     (or current-prefix-arg (dfp/get-quick-alpha))
