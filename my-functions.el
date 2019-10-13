@@ -29,7 +29,7 @@
 ;; Frame Transparency ;;
 (defvar dfp/quick-alphas (list 90 75 45))
 
-(defun dfp/set-frame-alpha (alpha &optional frame)
+(defun dfp/set-frame-alpha (new-alpha &optional frame)
   "Change the transparency of a frame
 
 The transparency of FRAME will be set to ALPHA. Optional
@@ -42,7 +42,7 @@ transparency of the current frame."
              current-prefix-arg
            (read-number "Value: "))))
   (setq frame (if frame frame (selected-frame))) ; frame defaults to selected frame
-  (set-frame-parameter frame 'alpha `(,alpha ,alpha)))
+  (set-frame-parameter frame 'alpha `(,new-alpha ,new-alpha)))
 
 (defun dfp/set-default-frame-alpha (new-alpha)
   "Set the default frame transparency
@@ -53,21 +53,24 @@ frames are not affected."
   (add-to-list 'default-frame-alist `(alpha ,new-alpha ,new-alpha)))
 
 (defun dfp/get-quick-alpha ()
-  (string-to-number
-   (single-key-description
-    (read-key
-     (apply 'concat
-            "Select an alpha value: "
-            (cl-loop for alpha-choice in dfp/base-frame-alphas
-                     for i from 1 to (length dfp/base-frame-alphas)
-                     collecting (format "[%d: %d%%]  " i alpha-choice)))))))
+  (nth
+   (1- (string-to-number
+        (single-key-description
+         (read-key
+          (apply 'concat
+                 "Select an alpha value: "
+                 (cl-loop for alpha-choice in dfp/quick-alphas
+                          for i from 1 to (length dfp/quick-alphas)
+                          collecting (format "[%d: %d%%]  " i alpha-choice)))))))
+   dfp/quick-alphas))
 
-(defun dfp/set-frame-alpha-from-quick-alpha (alpha-choice &optional frame)
-  (interactive
-   (list
-    (or current-prefix-arg (dfp/get-quick-alpha))
-    nil))
-  (dfp/set-frame-alpha (nth (1- alpha-choice) dfp/base-frame-alphas) frame))
+(defun dfp/set-frame-alpha-from-quick-alpha (&optional frame)
+  (interactive)
+  (dfp/set-frame-alpha (dfp/get-quick-alpha) frame))
+
+(defun dfp/set-default-frame-alpha-from-quick-alpha (&optional frame)
+  (interactive)
+  (dfp/set-default-frame-alpha (dfp/get-quick-alpha)))
 
 
 ;; Async Shell Command Execution in Named Buffer ;;
