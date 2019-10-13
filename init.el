@@ -88,9 +88,7 @@
 
 ;; Mode Settings ;;
 (tool-bar-mode -1)
-;; (global-linum-mode 1)
 (column-number-mode 1)
-(scroll-bar-mode -1)
 (setq-default indent-tabs-mode nil)
 
 ;; Additional Settings for Tiling WMs ;;
