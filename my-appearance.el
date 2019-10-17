@@ -6,6 +6,7 @@
 
 ;; Transparency ;;
 (dfp/set-default-frame-alpha (car dfp/quick-alphas))
+(if (selected-frame) (dfp/set-frame-alpha (car dfp/quick-alphas)))
 
 ;; Text-Appearance ;;
 (setq-default fill-column 80)
