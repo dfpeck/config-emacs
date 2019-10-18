@@ -1,5 +1,10 @@
 ;; Options for ls ;;
-(setq dired-listing-switches "-lahLD --group-directories-first")
+(setq dired-listing-switches "-lahLD")
+
+(unless (string-match-p (regexp-quote "mingw")
+                        (emacs-version))
+  (setq dired-listing-switches
+        (concat dired-listing-switches " --group-directories-first")))
 
 ;; Shell Command Defaults ;;
 (setq dired-guess-shell-alist-user
