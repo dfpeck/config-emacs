@@ -33,6 +33,7 @@
 (setq async-shell-command-buffer 'new-buffer)
 (setq save-interprogram-paste-before-kill t)
 (setq initial-buffer-choice (expand-file-name "~"))
+(setq next-screen-context-lines 4)
 
 ;; Make Aliases Available in Subshell ;;
 (unless (string-match-p (regexp-quote "mingw")
