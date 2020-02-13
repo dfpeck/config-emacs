@@ -1,3 +1,5 @@
+(setq org-export-with-sub-superscripts '{})
+
 (define-skeleton dfp/org-skeleton-notes-frame
   "An org file for class notes"
   nil
