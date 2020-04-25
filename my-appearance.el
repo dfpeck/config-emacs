@@ -9,7 +9,7 @@
 (if (selected-frame) (dfp/set-frame-alpha (car dfp/quick-alphas)))
 
 ;; Text-Appearance ;;
-(setq-default fill-column 80)
+(setq-default fill-column 90)
 (setq-default tab-width 4)
 
 ;; Scroll Bars
