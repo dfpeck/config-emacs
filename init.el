@@ -64,6 +64,7 @@
 (load "my-slime.el")
 (load "my-tide.el")
 (load "my-minor-modes.el")
+(load "renpy-mode/renpy.el")
 
 (load "~/Repos/renpy-mode/renpy.el")
 
@@ -91,6 +92,7 @@
 ;; Mode Settings ;;
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+(scroll-bar-mode -1)
 (column-number-mode 1)
 (setq-default indent-tabs-mode nil)
 
