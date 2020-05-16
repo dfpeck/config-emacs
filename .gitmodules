@@ -1,6 +1,3 @@
-[submodule "django-mode"]
-	path = django-mode
-	url = https://github.com/myfreeweb/django-mode
 [submodule "renpy-mode"]
 	path = renpy-mode
 	url = git@github.com:treymerkley/renpy-mode
