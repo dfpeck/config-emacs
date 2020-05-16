@@ -66,8 +66,6 @@
 (load "my-minor-modes.el")
 (load "renpy-mode/renpy.el")
 
-(load "~/Repos/renpy-mode/renpy.el")
-
 ;; Packages and Repositories ;;
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
