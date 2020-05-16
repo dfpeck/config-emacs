@@ -4,3 +4,6 @@
 [submodule "renpy-mode"]
 	path = renpy-mode
 	url = git@github.com:treymerkley/renpy-mode
+[submodule "pony-mode"]
+	path = pony-mode
+	url = git@github.com:/davidmiller/pony-mode
