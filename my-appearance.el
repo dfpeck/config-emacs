@@ -11,6 +11,8 @@
 ;; Text-Appearance ;;
 (setq-default fill-column 90)
 (setq-default tab-width 4)
+;(set-face-attribute 'default t :font "DejaVu Sans Mono-10.5")
+;(set-frame-font "DejaVu Sans Mono-10.5" nil t)
 
 ;; Scroll Bars
 (add-to-list 'default-frame-alist '(vertical-scroll-bars . nil))

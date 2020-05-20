@@ -66,6 +66,9 @@
 (load "my-tide.el")
 (load "my-minor-modes.el")
 
+(if (file-exists-p "renpy-mode/renpy.el")
+    (load "renpy-mode/renpy.el"))
+
 ;; Packages and Repositories ;;
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
@@ -90,6 +93,7 @@
 ;; Mode Settings ;;
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+(scroll-bar-mode -1)
 (column-number-mode 1)
 (setq-default indent-tabs-mode nil)
 
