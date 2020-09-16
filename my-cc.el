@@ -1,3 +1,14 @@
+;; Formatting ;;
+; (add-to-list 'c-default-style "bsd")
+(setq-default c-block-comment-prefix "* ")
+
+(c-add-style "dfp"
+             '("bsd"
+               (c-basic-offset . 2)
+               (c-offsets-alist
+                (case-label . +))))
+(setq c-default-style "dfp")
+
 ;; Keybindings ;;
 (with-eval-after-load "cc-mode"
   ;; disable electric comments
