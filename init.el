@@ -42,9 +42,13 @@
 
 (require 'package)
 (require 'dired-x)
-;; (require 'tls)
-;; (require 'erc)
 (require 'dired-mtp)
+
+(if (file-exists-p "renpy-mode/renpy.el")
+    (load "renpy-mode/renpy.el"))
+(if (file-exists-p "yaml-mode/yaml-mode.el")
+    (load "yaml-mode/yaml-mode.el"))
+
 (load "my-functions.el")
 (load "my-keys.el")
 (load "my-arduino.el")
@@ -61,9 +65,6 @@
 (load "my-slime.el")
 (load "my-tide.el")
 (load "my-minor-modes.el")
-
-(if (file-exists-p "renpy-mode/renpy.el")
-    (load "renpy-mode/renpy.el"))
 
 ;; Packages and Repositories ;;
 (add-to-list 'package-archives
