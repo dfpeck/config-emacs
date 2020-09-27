@@ -30,7 +30,7 @@
        (list "\\.cbr$" "comix")))
 
 ;; Omit Mode ;;
-(setq-default dired-omit-files-p t) ; Buffer-local variable
+(setq-default dired-omit-mode t) ; Buffer-local variable
 (setq dired-omit-files (concat dired-omit-files "\\|^\\..+$"))
 
 ;; Asyncronous Copy Using rsync ;;
