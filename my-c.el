@@ -18,6 +18,4 @@
 ;; Hide/Show Mode ;;
 (add-hook 'c++-mode-hook 'hs-minor-mode)
 (add-hook 'c-mode-hook 'hs-minor-mode)
-
-;; Formatting ;;
-(setq-default c-block-comment-prefix "* ")
+(add-hook 'java-mode-hook 'hs-minor-mode)

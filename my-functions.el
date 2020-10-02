@@ -36,7 +36,9 @@ The transparency of FRAME will be set to ALPHA. Optional
 parameter FRAME defaults to the result of `current-frame'.
 
 If used interactively, this function may only be used to set the
-transparency of the current frame."
+transparency of the current frame.
+
+Does not work in Wayland."
   (interactive
    (list (if current-prefix-arg
              current-prefix-arg
@@ -48,7 +50,9 @@ transparency of the current frame."
   "Set the default frame transparency
 
 NEW-ALPHA will be the transparency of all future frames. Existing
-frames are not affected."
+frames are not affected.
+
+Does not work in Wayland."
   (delete! (assoc 'alpha default-frame-alist) default-frame-alist)
   (add-to-list 'default-frame-alist `(alpha ,new-alpha ,new-alpha)))
 

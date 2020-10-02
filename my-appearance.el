@@ -1,5 +1,6 @@
-;; Monokai ;;
-(load-file "~/.emacs.d/themes/monokai-theme.el")
+;; Theme ;;
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'monokai t)
 
 ;; Cursor Color ;;
 (add-to-list 'default-frame-alist '((cursor-color . "white")))

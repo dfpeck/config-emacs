@@ -4,22 +4,19 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   (quote
-    ("d9046dcd38624dbe0eb84605e77d165e24fdfca3a40c3b13f504728bab0bf99d" default)))
+   '("e5b7b99ec658a89ec23bf88765c0720f04cacb0f994832f7044967bda7f15914" "d9046dcd38624dbe0eb84605e77d165e24fdfca3a40c3b13f504728bab0bf99d" default))
  '(delete-selection-mode nil)
  '(org-agenda-files nil)
  '(package-selected-packages
-   (quote
-    (company-irony-c-headers company-irony irony use-package company tide csharp-mode exec-path-from-shell bash-completion slime rust-mode)))
+   '(company-irony-c-headers company-irony irony use-package company tide csharp-mode exec-path-from-shell bash-completion slime rust-mode))
  '(safe-local-variable-values
-   (quote
-    ((c-file-style quote linux)
+   '((c-file-style quote linux)
      (org-html-postamble)
      (org-html-postamble . "<p class=\"author\">&hearts; ~%a~ &hearts;</p>")
      (org-html-postamble . "<p class=\"author\">~ %a ~</p>")
      (org-html-postamble . "<p class=\"author\">Author: %a (%e)</p>")
      (org-html-postamble-format
-      ("en" "<p class=\"author\">Author: %a (%e)</p>"))))))
+      ("en" "<p class=\"author\">Author: %a (%e)</p>")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -46,9 +43,13 @@
 
 (require 'package)
 (require 'dired-x)
-;; (require 'tls)
-;; (require 'erc)
 (require 'dired-mtp)
+
+(if (file-exists-p "renpy-mode/renpy.el")
+    (load "renpy-mode/renpy.el"))
+(if (file-exists-p "yaml-mode/yaml-mode.el")
+    (load "yaml-mode/yaml-mode.el"))
+
 (load "my-functions.el")
 (load "my-keys.el")
 (load "my-arduino.el")
@@ -65,9 +66,6 @@
 (load "my-slime.el")
 (load "my-tide.el")
 (load "my-minor-modes.el")
-
-(if (file-exists-p "renpy-mode/renpy.el")
-    (load "renpy-mode/renpy.el"))
 
 ;; Packages and Repositories ;;
 (add-to-list 'package-archives
@@ -96,12 +94,13 @@
 (scroll-bar-mode -1)
 (column-number-mode 1)
 (setq-default indent-tabs-mode nil)
+(setq-default subword-mode 1)
 
 ;; Additional Settings for Tiling WMs ;;
 (when (and (not (string-match-p (regexp-quote "mingw") ; if we are not on Windows
                                 (emacs-version)))
-           (string-match-p (regexp-quote "i3")         ; and if we are on i3
-                           (shell-command-to-string "echo $DESKTOP_SESSION")))
+           (or (string-match-p (regexp-quote "i3") (shell-command-to-string "echo $DESKTOP_SESSION"))         ; and if we are on i3
+               (string-match-p (regexp-quote "sway") (shell-command-to-string "echo $DESKTOP_SESSION"))))      ; or sway
   (defalias 'quit-window 'delete-frame)                ; tiling WM-friendly settings
   (setf pop-up-frames t))
 
