@@ -3,20 +3,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auth-source-save-behavior nil)
  '(custom-safe-themes
    '("e5b7b99ec658a89ec23bf88765c0720f04cacb0f994832f7044967bda7f15914" "d9046dcd38624dbe0eb84605e77d165e24fdfca3a40c3b13f504728bab0bf99d" default))
  '(delete-selection-mode nil)
  '(org-agenda-files nil)
  '(package-selected-packages
-   '(company-irony-c-headers company-irony irony use-package company tide csharp-mode exec-path-from-shell bash-completion slime rust-mode))
- '(safe-local-variable-values
-   '((c-file-style quote linux)
-     (org-html-postamble)
-     (org-html-postamble . "<p class=\"author\">&hearts; ~%a~ &hearts;</p>")
-     (org-html-postamble . "<p class=\"author\">~ %a ~</p>")
-     (org-html-postamble . "<p class=\"author\">Author: %a (%e)</p>")
-     (org-html-postamble-format
-      ("en" "<p class=\"author\">Author: %a (%e)</p>")))))
+   '(company-irony-c-headers company-irony irony use-package company tide csharp-mode exec-path-from-shell bash-completion slime rust-mode markdown-mode kivy-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
